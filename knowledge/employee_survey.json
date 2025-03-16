@@ -1,0 +1,58 @@
+{
+    "table_name": "employee_survey",
+    "table_description": "社員意識調査のデータを格納するテーブル。社員の属性情報と各質問に対するコメント及び感情分析結果を含む。",
+    "table_columns": [
+        {
+            "name": "question_id",
+            "type": "integer",
+            "description": "アンケート質問のID",
+            "valid_values": [4, 16, 29, 49, 59],
+            "example": "4",
+            "tip": "質問IDごとに異なる設問に対する回答が格納されています"
+        },
+        {
+            "name": "comment",
+            "type": "text",
+            "description": "社員が記入した自由記述のコメント",
+            "example": "ミッションには共感している一方で、目標設計のロジックについては理解がしきれていないと思っています",
+            "tip": "コメント内のキーワード検索にはLIKE演算子を使用してください"
+        },
+        {
+            "name": "department",
+            "type": "varchar(50)",
+            "description": "社員の所属部署",
+            "valid_values": ["人事部", "営業部", "研究開発部", "マーケティング部"],
+            "example": "人事部",
+            "tip": "部署ごとの傾向を分析する際に使用します"
+        },
+        {
+            "name": "gender",
+            "type": "varchar(10)",
+            "description": "社員の性別",
+            "valid_values": ["男", "女"],
+            "example": "男",
+            "tip": "性別ごとの回答傾向を分析する際に使用します"
+        },
+        {
+            "name": "join_year",
+            "type": "integer",
+            "description": "社員の入社年",
+            "valid_values": [2020, 2021, 2022, 2023],
+            "example": "2022",
+            "tip": "入社年ごとのコメント傾向を分析する際に使用します"
+        },
+        {
+            "name": "sentimental",
+            "type": "varchar(20)",
+            "description": "コメントの感情分析結果",
+            "valid_values": ["Neutral", "Negate", "Positive"],
+            "example": "Negate",
+            "tip": "肯定的、否定的、中立的なコメントを区別する際に使用します"
+        }
+    ],
+    "table_rules": [
+        "常に実際のデータベースからデータを取得し、ハードコーディングされた値は返さないでください",
+        "結果が多すぎる場合は必ずLIMIT句を使用してください",
+        "質問IDごとに設問内容が異なるため、分析の際は同じ質問に対する回答のみを比較してください"
+    ]
+}

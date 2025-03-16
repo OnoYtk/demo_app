@@ -5,5 +5,5 @@ __pycache__/*
 */__pycache__/*
 
 # .git/info/exclude に設定
-agents/prompts/*
-knowledge/employee_survey.json
+# agents/prompts/*
+# knowledge/employee_survey.json
