@@ -1,0 +1,9 @@
+knowledge/sample_queries.sql
+knowledge/employee_survey_master.json
+csv_data/*
+__pycache__/*
+*/__pycache__/*
+
+# .git/info/exclude に設定
+agents/prompts/*
+knowledge/employee_survey.json
